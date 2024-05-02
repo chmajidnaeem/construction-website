@@ -2,6 +2,3 @@
 @tailwind components;
 @tailwind utilities;
 
-.navbar-transition {
-    transition: all 0.3s ease-in-out;
-  }

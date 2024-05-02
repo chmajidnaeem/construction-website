@@ -1,9 +1,24 @@
-import Image from "next/image";
 
-export default function Home() {
+import React from 'react'
+import Carousel from './Components/Carousel'
+import Hero from './Components/Hero'
+import Services from './Components/Services'
+import Solotions from './Components/Solutions'
+import GetInTouch from './Components/GetInTouch'
+const page = () => {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-hello
-    </main>
-  );
+    <div className='bg-black'>
+
+<Carousel/>
+<Hero/>
+
+
+<Services/>
+<Solotions/>
+<GetInTouch/>
+
+    </div>
+  )
 }
+
+export default page
