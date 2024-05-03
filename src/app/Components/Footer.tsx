@@ -55,7 +55,7 @@ export default function LargeWithLogoLeft() {
           </a>
           </Stack>
           <Stack align={'flex-start'}>
-            <ListHeader>About Us</ListHeader>
+            <ListHeader><span className='text-red-700'> About Us</span></ListHeader>
             <Box as="a" href={'#'}>
               About Us
             </Box>
@@ -73,7 +73,7 @@ export default function LargeWithLogoLeft() {
             </Box>
           </Stack>
           <Stack align={'flex-start'}>
-            <ListHeader>Services</ListHeader>
+            <ListHeader><span className='text-red-700'>Services</span></ListHeader>
             <Box as="a" href={'#'}>
               About
             </Box>
@@ -91,7 +91,7 @@ export default function LargeWithLogoLeft() {
             </Box>
           </Stack>
           <Stack align={'flex-start'}>
-            <ListHeader>Our Work</ListHeader>
+            <ListHeader><span className='text-red-700'>Our Work</span></ListHeader>
             <Box as="a" href={'#'}>
               Help Center
             </Box>
@@ -109,7 +109,7 @@ export default function LargeWithLogoLeft() {
             </Box>
           </Stack>
           <Stack align={'flex-start'}>
-            <ListHeader>other</ListHeader>
+            <ListHeader><span className='text-red-700'>other</span></ListHeader>
             <Box as="a" href={'#'}>
               Facebook
             </Box>

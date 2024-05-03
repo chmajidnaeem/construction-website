@@ -10,10 +10,16 @@ import { AiOutlineMenu, AiOutlineClose } from "react-icons/ai";
 const Navbar = () => {
 
 
-  const [isOpen, setIsOpen] = useState(false);
+  const [isOpenOne, setIsOpenOne] = useState(false);
 
-  const toggleDropdown = () => {
-    setIsOpen(!isOpen);
+  const toggleDropdownOne = () => {
+    setIsOpenOne(!isOpenOne);
+  };
+
+  const [isOpenTwo, setIsOpenTwo] = useState(false);
+
+  const toggleDropdownTwo = () => {
+    setIsOpenTwo(!isOpenTwo);
   };
 
 
@@ -249,23 +255,23 @@ const Navbar = () => {
           tabIndex={0}
           role="button"
           className="block py-2 pl-3 pr-4 w-full flex justify-between items-center text-white hover:text-red-700 border-b border-gray-100 dark:border-gray-700"
-          onClick={toggleDropdown}
+          onClick={toggleDropdownOne}
         >
           About us
           <svg
             xmlns="http://www.w3.org/2000/svg"
-            className={`w-5 h-5 transition-transform ml-44 transform ${isOpen ? 'rotate-180' : ''}`}
+            className={`w-5 h-5 transition-transform ml-44 transform ${isOpenOne ? 'rotate-180' : ''}`}
             viewBox="0 0 20 20"
             fill="currentColor"
           >
             <path
               fillRule="evenodd"
-              d={isOpen ? "M10 3l7 7H3l7-7z" : "M10 17l-7-7h14l-7 7z"}
+              d={isOpenOne ? "M10 3l7 7H3l7-7z" : "M10 17l-7-7h14l-7 7z"}
               clipRule="evenodd"
             />
           </svg>
         </div>
-        {isOpen && (
+        {isOpenOne && (
           <ul className="dropdown-content z-[1] menu p-2 shadow bg-base-100 w-56 relative">
             <li><a>Item 1</a></li>
             <li><a>Item 2</a></li>
@@ -309,23 +315,23 @@ const Navbar = () => {
           tabIndex={0}
           role="button"
           className="block py-2 pl-3 pr-4 w-full flex justify-between items-center text-white hover:text-red-700 border-b border-gray-100 dark:border-gray-700"
-          onClick={toggleDropdown}
+          onClick={toggleDropdownTwo}
         >
           Services
           <svg
             xmlns="http://www.w3.org/2000/svg"
-            className={`w-5 h-5 transition-transform ml-44 transform ${isOpen ? 'rotate-180' : ''}`}
+            className={`w-5 h-5 transition-transform ml-44 transform ${isOpenTwo ? 'rotate-180' : ''}`}
             viewBox="0 0 20 20"
             fill="currentColor"
           >
             <path
               fillRule="evenodd"
-              d={isOpen ? "M10 3l7 7H3l7-7z" : "M10 17l-7-7h14l-7 7z"}
+              d={isOpenTwo ? "M10 3l7 7H3l7-7z" : "M10 17l-7-7h14l-7 7z"}
               clipRule="evenodd"
             />
           </svg>
         </div>
-        {isOpen && (
+        {isOpenTwo && (
           <ul className="dropdown-content z-[1] menu p-2 shadow bg-base-100 w-56 relative">
             <li><a>Item 1</a></li>
             <li><a>Item 2</a></li>

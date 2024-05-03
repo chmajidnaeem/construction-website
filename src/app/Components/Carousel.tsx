@@ -1,6 +1,7 @@
 'use client'
 
 import React from 'react'
+import Image from 'next/image'
 import {
   Box,
   IconButton,
@@ -16,18 +17,21 @@ import {
 import { BiLeftArrowAlt, BiRightArrowAlt } from 'react-icons/bi'
 // And react-slick as our Carousel Lib
 import Slider from 'react-slick'
+import { color, px } from 'framer-motion'
 
 // Settings for the slider
 const settings = {
   dots: true,
   arrows: false,
-  fade: true,
+  fade: false,
   infinite: true,
   autoplay: true,
   speed: 500,
   autoplaySpeed: 5000,
-  slidesToShow: 1,
+  slidesToShow: 1.2,
   slidesToScroll: 1,
+  // centerMode: true, // Enable center mode
+  // centerPadding: '10%',
 }
 
 export default function CaptionCarousel() {
@@ -64,82 +68,114 @@ export default function CaptionCarousel() {
   ]
 
   return (
-    <Box position={'relative'} height={'600px'} width={'full'} overflow={'hidden'}>
-      {/* CSS files for react-slick */}
-      <link
-        rel="stylesheet"
-        type="text/css"
-        href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.min.css"
-      />
-      <link
-        rel="stylesheet"
-        type="text/css"
-        href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick-theme.min.css"
-      />
-      {/* Left Icon */}
-      <IconButton
-        aria-label="left-arrow"
-        variant="ghost"
-        position="absolute"
-        left={side}
-        top={top}
-        transform={'translate(0%, -50%)'}
-        zIndex={2}
-        onClick={() => slider?.slickPrev()}>
-        <BiLeftArrowAlt size="40px" />
-      </IconButton>
-      {/* Right Icon */}
-      <IconButton
-        aria-label="right-arrow"
-        variant="ghost"
-        position="absolute"
-        right={side}
-        top={top}
-        transform={'translate(0%, -50%)'}
-        zIndex={2}
-        onClick={() => slider?.slickNext()}>
-        <BiRightArrowAlt size="40px" />
-      </IconButton>
-      {/* Slider */}
-      <Slider {...settings} ref={(slider) => setSlider(slider)}>
-        {cards.map((card, index) => (
+    <Box position="relative" height="420px" width="full" overflow="hidden">
+    {/* CSS files for react-slick */}
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.min.css"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick-theme.min.css"
+    />
+    {/* Left Icon */}
+    <IconButton
+      aria-label="left-arrow"
+      variant=""
+      color={'white'}
+      _hover={{ color: 'red' }}
+      marginTop={4}
+      position="absolute"
+      right={12}
+      top={96}
+      transform={'translate(0%, -50%)'}
+      zIndex={2}
+      onClick={() => slider?.slickPrev()}
+    >
+      <BiLeftArrowAlt size="40px" />
+    </IconButton>
+    {/* Right Icon */}
+    <IconButton
+      aria-label="right-arrow"
+      variant=""
+      color={'white'}
+      _hover={{ color: 'red' }}
+      position="absolute"
+      right={4}
+      marginTop={4}
+      top={96}
+      transform={'translate(0%, -50%)'}
+      zIndex={2}
+      onClick={() => slider?.slickNext()}
+    >
+      <BiRightArrowAlt size="40px" />
+    </IconButton>
+    {/* Slider */}
+    <Slider
+      {...settings}
+      ref={(slider) => setSlider(slider)}
+      slidesToShow={1}
+      slidesToScroll={1}
+    >
+      {cards.map((card, index) => (
+        <Box key={index} position="relative">
           <Box
-            key={index}
-            height={'6xl'}
-            position="relative"
-            backgroundPosition="center"
-            backgroundRepeat="no-repeat"
-            backgroundSize="cover"
-            backgroundImage={`url(${card.image})`}>
-            {/* This is the block you need to change, to customize the caption */}
-            <Container size="container.lg" height="600px" position="relative">
-              <Stack
-                spacing={6}
-                w={'full'}
-                maxW={'lg'}
-                position="absolute"
-                top="50%"
-                transform="translate(0, -50%)">
-                   {/* <Text borderRadius={0} width={40} height={10} bg={'transparent-30%'} backgroundColor={'black'} textColor={'white'} textAlign={'center'}  _hover={{ borderColor: 'red', textColor: 'red' }}>
-            Service
-          </Text> */}
-                <Heading fontSize={{ base: '3xl', md: '4xl', lg: '5xl' }}>
-                  {card.title}
-                </Heading>
-                <Text fontSize={{ base: 'md', lg: 'lg' }} color="GrayText">
-                  {card.text}
-                </Text>
-
-                <Button borderRadius={0} width={40} bg={'transparent'} textColor={'black'} borderWidth={1} borderColor="black" _hover={{ borderColor: 'red', textColor: 'red' }}>
-            Learn More
-          </Button>
-
-
-              </Stack>
-            </Container>
+            position="absolute"
+            left={0}
+            top={0}
+            zIndex={1}
+            width="40%"
+            height="100%"
+            background="rgba(0, 0, 0, 0.7)"
+           
+          >
+            <Stack
+              spacing={6}
+              direction="column"
+              alignItems="start"
+              justifyContent="left"
+              height="100%"
+              padding={6}
+              color="white"
+            >
+              <Box
+  borderRadius={0}
+  width={24}
+  bg={'rgba(0, 0, 0, 0.5)'} // 50% transparency black background
+  color={'white'}
+  textAlign={'center'}
+  lineHeight={'36px'} // Adjust as needed for vertical alignment
+>
+  Project
+</Box>
+              <Heading fontSize={{ base: '3xl', md: '4xl', lg: '5xl' }}>
+                {card.title}
+              </Heading>
+              <Text fontSize={{ base: 'md', lg: 'lg' }}>
+                {card.text}
+              </Text>
+              <Button
+                borderRadius={0}
+                width={40}
+                bg={'transparent'}
+                textColor={'white'}
+                borderWidth={1}
+                borderColor="white"
+                _hover={{ borderColor: 'red', backgroundColor: 'red' }}
+              >
+                Learn More
+              </Button>
+            </Stack>
           </Box>
-        ))}
-      </Slider>
-    </Box>
+          <Image src={card.image} alt={''} height={420} width={1170} />
+        </Box>
+      ))}
+    </Slider>
+  </Box>
   )
 }
+
+
+
