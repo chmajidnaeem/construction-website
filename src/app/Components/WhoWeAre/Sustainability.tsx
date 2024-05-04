@@ -1,7 +1,7 @@
 "use client";
 import React from "react";
 import Image from "next/image";
-import SustainabilityImg from "../../../public/sustainability.jpg";
+import SustainabilityImg from "../../../../public/sustainability.jpg";
 import {
     Stack,
     Button,

@@ -1,7 +1,7 @@
 "use client";
 import React from "react";
 import Image from "next/image";
-import WhoWeAreImg from "../../../public/tetrisdb-illus-who-we-are-header.jpg";
+import WhoWeAreImg from "../../../../public/tetrisdb-illus-who-we-are-header.jpg";
 
 import {
   Stack,

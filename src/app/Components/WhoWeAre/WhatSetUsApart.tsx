@@ -1,7 +1,7 @@
 "use client";
 import React from "react";
 import Image from "next/image";
-import whatsetusApart from "../../../public/what-sets-us-apart.jpg";
+import whatsetusApart from "../../../../public/what-sets-us-apart.jpg";
 import {
     Stack,
     Button,
