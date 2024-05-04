@@ -48,7 +48,7 @@ export default function OurHistory() {
 
   // This list contains all the data for carousels
   // This can be static or loaded from a server
-  const cards = [
+  const histories = [
     {
       title: "2003",
       text: "Tétris founded, in France, by Franck Eburderie.",
@@ -125,17 +125,17 @@ export default function OurHistory() {
         />
 
         <Slider {...settings} ref={(slider) => setSlider(slider)}>
-          {cards.map((card, index) => (
+          {histories.map((history, index) => (
             <Box key={index} height={"100%"} pr={20}>
               <Stack spacing={6} direction="column" height={"100%"} p={2}>
                 <Heading
                   fontSize={{ base: "1xl", md: "2xl", lg: "3xl" }}
                   color={"white"}
                 >
-                  {card.title}
+                  {history.title}
                 </Heading>
                 <Text fontSize={{ base: "sm", lg: "md" }} color="white">
-                  {card.text}
+                  {history.text}
                 </Text>
               </Stack>
             </Box>

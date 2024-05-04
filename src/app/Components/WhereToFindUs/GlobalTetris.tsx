@@ -3,7 +3,23 @@ import React from "react";
 import Image from "next/image";
 import { useState } from "react";
 import { RiSearchLine, RiCloseLine } from "react-icons/ri";
-import WhoWeAreImg from "../../../../public/tetrisdb-illus-who-we-are-header.jpg";
+
+const countries = [
+  { name: "United Kingdom", image: "/tetrisdb-office-uk.jpg" },
+  { name: "France", image: "/tetrisdb-office-france.jpg" },
+  { name: "Belgium", image: "/tetris-belgium-team-2024.jpg" },
+  { name: "Netherlands", image: "/tetrisdb-office-netherlands-2.jpg" },
+  { name: "Luxembourg", image: "/tetrisdb-office-luxembourg-2022.jpg" },
+  { name: "Switzerland", image: "/tetrisdb-office-switzerland.jpg" },
+  { name: "Germany", image: "/tetrisdb-office-germany.jpg" },
+  { name: "Poland", image: "/tetris-poland-10-22.jpg" },
+  { name: "Italy", image: "/tetrisdb-office-italy.jpg" },
+  { name: "Spain", image: "/tetrisdb-office-spain.jpg" },
+  { name: "Portugal", image: "/tetrisdb-office-portugal.jpg" },
+  { name: "Africa", image: "/tetris-db-team-south-africa-scaled.jpg" },
+  { name: "Brazil", image: "/tetrisdb-office-brazil.jpg" },
+  { name: "Dubai", image: "/tetrisdb-office-dubai.jpg" },
+];
 
 const GlobalTetris = () => {
   const [searchValue, setSearchValue] = useState("");
@@ -41,148 +57,23 @@ const GlobalTetris = () => {
           <RiSearchLine className="h-5 w-5 text-gray-400" />
         </div>
       </div>
+
       {/* countries list  */}
-      <div className="grid grid-cols-2 gap-10 mt-14">
-        <div className="relative">
-        <Image
-          className="w-full h-full object-cover transition-transform duration-300 transform hover:scale-105"
-          src={WhoWeAreImg}
-          alt="Image description"
-        />
-          <div className="absolute bottom-0 left-0 py-4 px-5">
-            <h2 className="text-white font-bold text-2xl">United Kingdom</h2>
+      <div className="grid md:grid-cols-2 grid-cols-1 gap-10 mt-14 pb-12">
+        {countries.map((country) => (
+          <div key={country.name} className="relative">
+            <Image
+              className="w-full h-full object-cover transition-transform duration-300 transform hover:scale-105"
+              src={country.image}
+              alt={country.name}
+              width={500}
+              height={300}
+            />
+            <div className="absolute bottom-0 left-0 py-4 px-5">
+              <h2 className="text-white font-bold text-2xl">{country.name}</h2>
+            </div>
           </div>
-        </div>
-        <div className="relative">
-        <Image
-          className="w-full h-full object-cover transition-transform duration-300 transform hover:scale-105"
-          src={WhoWeAreImg}
-          alt="Image description"
-        />
-          <div className="absolute bottom-0 left-0 py-4 px-5">
-            <h2 className="text-white font-bold text-2xl">United Kingdom</h2>
-          </div>
-        </div>
-        <div className="relative">
-        <Image
-          className="w-full h-full object-cover transition-transform duration-300 transform hover:scale-105"
-          src={WhoWeAreImg}
-          alt="Image description"
-        />
-          <div className="absolute bottom-0 left-0 py-4 px-5">
-            <h2 className="text-white font-bold text-2xl">United Kingdom</h2>
-          </div>
-        </div>
-        <div className="relative">
-        <Image
-          className="w-full h-full object-cover transition-transform duration-300 transform hover:scale-105"
-          src={WhoWeAreImg}
-          alt="Image description"
-        />
-          <div className="absolute bottom-0 left-0 py-4 px-5">
-            <h2 className="text-white font-bold text-2xl">United Kingdom</h2>
-          </div>
-        </div>
-        <div className="relative">
-        <Image
-          className="w-full h-full object-cover transition-transform duration-300 transform hover:scale-105"
-          src={WhoWeAreImg}
-          alt="Image description"
-        />
-          <div className="absolute bottom-0 left-0 py-4 px-5">
-            <h2 className="text-white font-bold text-2xl">United Kingdom</h2>
-          </div>
-        </div>
-        <div className="relative">
-        <Image
-          className="w-full h-full object-cover transition-transform duration-300 transform hover:scale-105"
-          src={WhoWeAreImg}
-          alt="Image description"
-        />
-          <div className="absolute bottom-0 left-0 py-4 px-5">
-            <h2 className="text-white font-bold text-2xl">United Kingdom</h2>
-          </div>
-        </div>
-        <div className="relative">
-        <Image
-          className="w-full h-full object-cover transition-transform duration-300 transform hover:scale-105"
-          src={WhoWeAreImg}
-          alt="Image description"
-        />
-          <div className="absolute bottom-0 left-0 py-4 px-5">
-            <h2 className="text-white font-bold text-2xl">United Kingdom</h2>
-          </div>
-        </div>
-        <div className="relative">
-        <Image
-          className="w-full h-full object-cover transition-transform duration-300 transform hover:scale-105"
-          src={WhoWeAreImg}
-          alt="Image description"
-        />
-          <div className="absolute bottom-0 left-0 py-4 px-5">
-            <h2 className="text-white font-bold text-2xl">United Kingdom</h2>
-          </div>
-        </div>
-        <div className="relative">
-        <Image
-          className="w-full h-full object-cover transition-transform duration-300 transform hover:scale-105"
-          src={WhoWeAreImg}
-          alt="Image description"
-        />
-          <div className="absolute bottom-0 left-0 py-4 px-5">
-            <h2 className="text-white font-bold text-2xl">United Kingdom</h2>
-          </div>
-        </div>
-        <div className="relative">
-        <Image
-          className="w-full h-full object-cover transition-transform duration-300 transform hover:scale-105"
-          src={WhoWeAreImg}
-          alt="Image description"
-        />
-          <div className="absolute bottom-0 left-0 py-4 px-5">
-            <h2 className="text-white font-bold text-2xl">United Kingdom</h2>
-          </div>
-        </div>
-        <div className="relative">
-        <Image
-          className="w-full h-full object-cover transition-transform duration-300 transform hover:scale-105"
-          src={WhoWeAreImg}
-          alt="Image description"
-        />
-          <div className="absolute bottom-0 left-0 py-4 px-5">
-            <h2 className="text-white font-bold text-2xl">United Kingdom</h2>
-          </div>
-        </div>
-        <div className="relative">
-        <Image
-          className="w-full h-full object-cover transition-transform duration-300 transform hover:scale-105"
-          src={WhoWeAreImg}
-          alt="Image description"
-        />
-          <div className="absolute bottom-0 left-0 py-4 px-5">
-            <h2 className="text-white font-bold text-2xl">United Kingdom</h2>
-          </div>
-        </div>
-        <div className="relative">
-        <Image
-          className="w-full h-full object-cover transition-transform duration-300 transform hover:scale-105"
-          src={WhoWeAreImg}
-          alt="Image description"
-        />
-          <div className="absolute bottom-0 left-0 py-4 px-5">
-            <h2 className="text-white font-bold text-2xl">United Kingdom</h2>
-          </div>
-        </div>
-        <div className="relative">
-        <Image
-          className="w-full h-full object-cover transition-transform duration-300 transform hover:scale-105"
-          src={WhoWeAreImg}
-          alt="Image description"
-        />
-          <div className="absolute bottom-0 left-0 py-4 px-5">
-            <h2 className="text-white font-bold text-2xl">United Kingdom</h2>
-          </div>
-        </div>
+        ))}
       </div>
     </div>
   );

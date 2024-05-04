@@ -1,12 +1,14 @@
-import React from 'react'
-import GlobalTetris from './GlobalTetris'
+import React from "react";
+import GlobalTetris from "./GlobalTetris";
+import GetInTouch from "./GetInTouch";
 
 const page = () => {
   return (
     <div>
-        <GlobalTetris />
+      <GetInTouch />
+      <GlobalTetris />
     </div>
-  )
-}
+  );
+};
 
-export default page
+export default page;
