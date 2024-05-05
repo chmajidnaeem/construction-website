@@ -40,15 +40,16 @@ const Navbar = () => {
 
   return (
     <div>
-      <nav className="bg-white border-gray-200 py-4 dark:bg-black">
+      <nav className="bg-white border-gray-200 py-4 dark:bg-black fixed top-0 z-50 w-full">
         <div className="flex flex-wrap items-center justify-between max-w-screen-xl sm:px-12 px-4 mx-auto">
-          <a href="#" className="flex flex-col items-center">
-            <span className="self-center sm:text-5xl text-3xl font-bold whitespace-nowrap text-white">
+          <a href="/" className="flex flex-col items-center">
+            {/* <span className="self-center sm:text-5xl text-3xl font-bold whitespace-nowrap text-white">
               tetris
             </span>
             <span className="sm:pl-6 pl-0 self-center sm:text-sm text-xs whitespace-nowrap text-white">
               design*build
-            </span>
+            </span> */}
+            <Image src="/logo.png" alt="" w={16} height={16} className=" rounded-full"/>
           </a>
 
           <div
@@ -58,7 +59,7 @@ const Navbar = () => {
             <ul className="flex flex-col mt-4 font-medium lg:flex-row lg:space-x-8 lg:mt-0">
               <li>
                 <div className="dropdown dropdown-hover">
-                  <a href="#">
+                  <a href="/">
                     {" "}
                     <div
                       tabIndex={0}
@@ -70,20 +71,26 @@ const Navbar = () => {
                   </a>
                   <ul
                     tabIndex={0}
-                    className="dropdown-content z-[1] menu p-2 shadow bg-base-100 w-52"
+                    className="dropdown-content z-[1] menu p-2 shadow bg-gray-800 text-white w-52"
                   >
                     <li>
-                      <a>Item 1</a>
+                      <a href="/Components/WhoWeAre" className=" hover:text-red-700">Who we are</a>
                     </li>
                     <li>
-                      <a>Item 2</a>
+                    <a href="/Components/WhereToFindUs" className=" hover:text-red-700">Where to find us</a>
+                    </li>
+                    <li>
+                    <a href="/Components/MeetTheTeam" className=" hover:text-red-700">Meet the team</a>
+                    </li>
+                    <li>
+                    <a href="/Components/Sustainablity" className=" hover:text-red-700">Sustainability</a>
                     </li>
                   </ul>
                 </div>
               </li>
               <li>
                 <div className="dropdown dropdown-hover">
-                  <a href="#">
+                  <a href="/Services">
                     {" "}
                     <div
                       tabIndex={0}
@@ -95,13 +102,25 @@ const Navbar = () => {
                   </a>
                   <ul
                     tabIndex={0}
-                    className="dropdown-content z-[1] menu p-2 shadow bg-base-100 w-52"
+                    className="dropdown-content z-[1] menu p-2 shadow bg-gray-800 text-white w-52"
                   >
                     <li>
-                      <a>Item 1</a>
+                      <a href="/Services" className=" hover:text-red-700">Design and Build</a>
                     </li>
                     <li>
-                      <a>Item 2</a>
+                    <a className=" hover:text-red-700">Workplace consultancy</a>
+                    </li>
+                    <li>
+                    <a className=" hover:text-red-700">Interior design</a>
+                    </li>
+                    <li>
+                    <a className=" hover:text-red-700">Fit-out services</a>
+                    </li>
+                    <li>
+                    <a className=" hover:text-red-700">Furniture solutions</a>
+                    </li>
+                    <li>
+                    <a className=" hover:text-red-700">Sectors</a>
                     </li>
                   </ul>
                 </div>
@@ -272,10 +291,23 @@ const Navbar = () => {
           </svg>
         </div>
         {isOpenOne && (
-          <ul className="dropdown-content z-[1] menu p-2 shadow bg-base-100 w-56 relative">
-            <li><a>Item 1</a></li>
-            <li><a>Item 2</a></li>
-          </ul>
+          <ul
+          tabIndex={0}
+          className="dropdown-content z-[1] menu p-2 shadow bg-gray-800 text-white w-52"
+        >
+          <li>
+            <a className=" hover:text-red-700">Who we are</a>
+          </li>
+          <li>
+          <a className=" hover:text-red-700">Where to find us</a>
+          </li>
+          <li>
+          <a className=" hover:text-red-700">Meet the team</a>
+          </li>
+          <li>
+          <a className=" hover:text-red-700">Sustainability</a>
+          </li>
+        </ul>
         )}
       </div>
     </li>
@@ -332,10 +364,29 @@ const Navbar = () => {
           </svg>
         </div>
         {isOpenTwo && (
-          <ul className="dropdown-content z-[1] menu p-2 shadow bg-base-100 w-56 relative">
-            <li><a>Item 1</a></li>
-            <li><a>Item 2</a></li>
-          </ul>
+          <ul
+          tabIndex={0}
+          className="dropdown-content z-[1] menu p-2 shadow bg-gray-800 text-white w-52"
+        >
+          <li>
+            <a className=" hover:text-red-700">Design and Build</a>
+          </li>
+          <li>
+          <a className=" hover:text-red-700">Workplace consultancy</a>
+          </li>
+          <li>
+          <a className=" hover:text-red-700">Interior design</a>
+          </li>
+          <li>
+          <a className=" hover:text-red-700">Fit-out services</a>
+          </li>
+          <li>
+          <a className=" hover:text-red-700">Furniture solutions</a>
+          </li>
+          <li>
+          <a className=" hover:text-red-700">Sectors</a>
+          </li>
+        </ul>
         )}
       </div>
     </li>

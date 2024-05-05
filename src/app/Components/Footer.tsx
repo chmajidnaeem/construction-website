@@ -46,11 +46,11 @@ export default function LargeWithLogoLeft() {
           spacing={8}>
           <Stack spacing={6}>
           <a href="#" className="flex flex-col items-center">
-            <span className="self-center sm:text-5xl text-3xl font-bold whitespace-nowrap text-white">
-              tetris
+            <span className="self-center sm:text-4xl text-3xl font-bold whitespace-nowrap text-white">
+              Empirical
             </span>
-            <span className="sm:pl-6 pl-0 self-center sm:text-sm text-xs whitespace-nowrap text-white">
-              design*build
+            <span className="sm:pl-8 pl-0 self-center sm:text-lg text-xs whitespace-nowrap text-white">
+              construction
             </span>
           </a>
           </Stack>

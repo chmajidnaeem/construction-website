@@ -8,7 +8,7 @@ import GetInTouch from './Components/GetInTouch'
 import Insights from './Components/Insights'
 const page = () => {
   return (
-    <div className='bg-black'>
+    <div className='bg-black pt-24 pb-4'>
 
 <Carousel/>
 <Hero/>
