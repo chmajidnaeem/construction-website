@@ -90,7 +90,7 @@ const GlobbalTeam = () => {
           businesses.
         </p>
       </div>
-      {/* countries list  */}
+      {/* team members  */}
       <div className="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-10 md:gap-6 space-y-16 mt-14 pb-12">
         {Team.map((team) => (
           <div key={team.heading} className="relative">
