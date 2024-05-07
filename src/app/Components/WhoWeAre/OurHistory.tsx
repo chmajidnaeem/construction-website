@@ -72,6 +72,8 @@ export default function OurHistory() {
       <h2 className="text-2xl font-extrabold tracking-tight text-gray-900 sm:text-4xl dark:text-white pb-16 pl-12">
         Our History
       </h2>
+      <hr className="border-dashed border-white border-1 mb-12 mx-14" />
+
       {/* Left Icon */}
       <IconButton
         aria-label="left-arrow"

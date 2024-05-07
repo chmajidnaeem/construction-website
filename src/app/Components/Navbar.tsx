@@ -58,7 +58,7 @@ const Navbar = () => {
             <ul className="flex flex-col mt-4 font-medium lg:flex-row lg:space-x-8 lg:mt-0">
               <li>
                 <div className="dropdown dropdown-hover">
-                  <a href="#">
+                <a href="/Components/WhoWeAre">
                     {" "}
                     <div
                       tabIndex={0}
@@ -73,10 +73,16 @@ const Navbar = () => {
                     className="dropdown-content z-[1] menu p-2 shadow bg-base-100 w-52"
                   >
                     <li>
-                      <a>Item 1</a>
+                    <a href="/Components/WhoWeAre">Who We Are</a>
                     </li>
                     <li>
-                      <a>Item 2</a>
+                    <a href="/Components/WhereToFindUs">Where To Find Us</a>
+                    </li>
+                    <li>
+                    <a href="/Components/MeetTheTeam">Meet The Team</a>
+                    </li>
+                    <li>
+                    <a href="/Components/Sustainablity">Sustainablity</a>
                     </li>
                   </ul>
                 </div>
