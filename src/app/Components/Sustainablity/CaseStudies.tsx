@@ -46,9 +46,9 @@ const CaseStudies = () => {
 
       <div className="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-10 mt-14 pb-12">
         {Cases.map((cases) => (
-          <div key={cases.name} className="relative">
+          <div key={cases.name} className="relative overflow-hidden">
             <Image
-              className="w-full h-[250px] object-cover transition-transform duration-300 transform hover:scale-105"
+              className="w-full h-[250px] object-cover transition-transform duration-300 transform hover:scale-110"
               src={cases.image}
               alt={cases.name}
               width={500}

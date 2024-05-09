@@ -25,9 +25,9 @@ const Testimonials = () => {
 
       <div className="grid lg:grid-cols-4 md:grid-cols-2 grid-cols-1 gap-10 mt-14 pb-12">
         {Cases.map((cases) => (
-          <div key={cases.image} className="relative">
+          <div key={cases.image} className="relative overflow-hidden">
             <Image
-              className="w-full h-[270px] object-cover transition-transform duration-300 transform hover:scale-105"
+              className="w-full h-[270px] object-cover transition-transform duration-300 transform hover:scale-110"
               src={cases.image}
               alt={cases.image}
               width={500}

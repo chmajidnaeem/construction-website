@@ -41,9 +41,9 @@ const SustainabilityApproach = () => {
 
       <div className="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-10 mt-14 pb-12">
         {communities.map((community) => (
-          <div key={community.name} className="relative">
+          <div key={community.name} className="relative overflow-hidden">
             <Image
-              className="w-full h-[250px] object-cover transition-transform duration-300 transform hover:scale-105"
+              className="w-full h-[250px] object-cover transition-transform duration-300 transform hover:scale-110"
               src={community.image}
               alt={community.name}
               width={500}
