@@ -1,32 +1,31 @@
 "use client";
 import { useState } from "react";
+import React from "react";
 import Image from "next/image";
-import Barcelona from "../../../../public/tetris-db-travelperk-spain-barcelona.jpg";
-/* styles.css */
 import "./animation.css";
+import { Button } from "@chakra-ui/react";
 
-const GlobalOfficePr = () => {
+const AllProjects = () => {
   const [isHovered1, setIsHovered1] = useState(false);
   const [isHovered2, setIsHovered2] = useState(false);
-  const [isHovered3, setIsHovered3] = useState(false);
-
   return (
-    <div className=" justify-between md:px-16 px-5 bg-[#020510] pb-12 gap-8 lg:grid-cols-3 md:grid-cols-2 grid-cols-1 grid">
-
-      
+    <div className="bg-[#020510]">
+        
+    <div className=" md:px-12 px-5  grid md:grid-cols-2 grid-cols-1 gap-12 md:pb-28 pb-10 pt-28 ">
+      {/* left side  */}
       <div
         className="relative group"
         onMouseEnter={() => setIsHovered1(true)}
         onMouseLeave={() => setIsHovered1(false)}
       >
         <Image
-          className="w-[400px] h-[280px]"
+          className="md:w-[650px] md:h-[450px] w-full h-[282px]"
           src="/tetris-db-travelperk-spain-barcelona.jpg"
           alt="Your Image"
           width={350}
           height={200}
         />
-         {isHovered1 && (
+        {isHovered1 && (
           <div className="absolute bottom-0 left-0 w-full h-full bg-black bg-opacity-50 px-6 py-8 transition-transform duration-500 transform translate-y-0 animate-slideIn">
             <h2 className="text-white text-3xl font-extrabold">TravelPerk</h2>
 
@@ -47,19 +46,16 @@ const GlobalOfficePr = () => {
             </p>
           </div>
         )}
-</div>
-
-
-
-
+      </div>
+      {/* rigth side  */}
       <div
-        className="relative"
+        className="relative group"
         onMouseEnter={() => setIsHovered2(true)}
         onMouseLeave={() => setIsHovered2(false)}
       >
         <Image
-          className="w-[400px] h-[280px]"
-          src="/tetris-db-jll-uk-london.jpg"
+          className="md:w-[650px] md:h-[450px] w-full h-[282px]"
+          src="/tetris-db-travelperk-spain-barcelona.jpg"
           alt="Your Image"
           width={350}
           height={200}
@@ -86,46 +82,25 @@ const GlobalOfficePr = () => {
           </div>
         )}
       </div>
-
-      <div
-        className="relative"
-        onMouseEnter={() => setIsHovered3(true)}
-        onMouseLeave={() => setIsHovered3(false)}
-      >
-        <Image
-          className="w-[400px] h-[280px]"
-          src="/tetris-db-jll-south-africa.jpg"
-          alt="Your Image"
-          width={350}
-          height={200}
-        />
-        {isHovered3 && (
-          <div className="absolute bottom-0 left-0 w-full h-full bg-black bg-opacity-50 px-6 py-8 transition-transform duration-500 transform translate-y-0 animate-slideIn">
-            <h2 className="text-white text-3xl font-extrabold">TravelPerk</h2>
-
-            <div className="text-white flex font-medium text-base mt-4">
-              <p>Barcelona, Spain</p>
-              <ul>
-                <li className="list-disc ml-6">Office</li>
-              </ul>
-            </div>
-
-            <p className="text-white mt-5 font-medium text-base">
-              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Vero
-              ipsam temporibus pariatur aliquid odio, ut distinctio deserunt
-              atque similique itaque illo.
-              <p className="mt-auto text-white font-bold text-lg">
-                Discover <span className="text-red-500 text-2xl">&#8594;</span>
-              </p>
-            </p>
-          </div>
-        )}
-      </div>
-
-
-
     </div>
+
+
+    <div className="pb-12 justify-center flex">
+              <Button
+                borderRadius={0}
+                width={40}
+                bg={"transparent"}
+                textColor={"white"}
+                // borderWidth={1}
+                // borderColor="white"
+                _hover={{  textColor: "red" }}
+              >
+                See All Projects
+              </Button>
+            </div>
+    </div>
+
   );
 };
 
-export default GlobalOfficePr;
+export default AllProjects;

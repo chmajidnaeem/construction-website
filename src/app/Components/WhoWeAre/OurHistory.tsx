@@ -9,10 +9,6 @@ import {
   Stack,
   Heading,
   Text,
-  Container,
-  Button,
-  ButtonGroup,
-  Center,
 } from "@chakra-ui/react";
 // Here we have used react-icons package for the icons
 import { BiLeftArrowAlt, BiRightArrowAlt } from "react-icons/bi";
