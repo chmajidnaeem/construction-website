@@ -129,7 +129,7 @@ const Navbar = () => {
               </li>
               <li>
                 <a
-                  href="#"
+                 href="/Components/ContactUs"
                   className="block py-2 pl-3 pr-4 text-white hover:text-red-700"
                 >
                   Contact us
