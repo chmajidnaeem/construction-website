@@ -26,6 +26,9 @@ const GlobalOfficePr = () => {
           width={350}
           height={200}
         />
+        <h2 className=" text-white mt-3 text-2xl font-extrabold mx-6">
+            Natixis
+          </h2>
          {isHovered1 && (
           <div className="absolute bottom-0 left-0 w-full h-full bg-black bg-opacity-50 px-6 py-8 transition-transform duration-500 transform translate-y-0 animate-slideIn">
             <h2 className="text-white text-3xl font-extrabold">TravelPerk</h2>
@@ -64,6 +67,9 @@ const GlobalOfficePr = () => {
           width={350}
           height={200}
         />
+        <h2 className=" text-white mt-3 text-2xl font-extrabold mx-6">
+            Natixis
+          </h2>
         {isHovered2 && (
           <div className="absolute bottom-0 left-0 w-full h-full bg-black bg-opacity-50 px-6 py-8 transition-transform duration-500 transform translate-y-0 animate-slideIn">
             <h2 className="text-white text-3xl font-extrabold">TravelPerk</h2>
@@ -99,6 +105,9 @@ const GlobalOfficePr = () => {
           width={350}
           height={200}
         />
+        <h2 className=" text-white mt-3 text-2xl font-extrabold mx-6">
+            Natixis
+          </h2>
         {isHovered3 && (
           <div className="absolute bottom-0 left-0 w-full h-full bg-black bg-opacity-50 px-6 py-8 transition-transform duration-500 transform translate-y-0 animate-slideIn">
             <h2 className="text-white text-3xl font-extrabold">TravelPerk</h2>

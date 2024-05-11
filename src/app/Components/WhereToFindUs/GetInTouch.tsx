@@ -2,39 +2,41 @@
 import { useState } from "react";
 import { RiArrowDropDownLine } from "react-icons/ri";
 import { Stack, Button } from "@chakra-ui/react";
+import Image from "next/image";
+import Sustainability from "../../../../public/sustainability-hero.jpg";
 
 const countries = [
   {
     name: "Pakistan",
     code: "pk",
     heading: "Get in touch with our team to talk about your projects",
-    location: "Tétris Geneva",
-    address: "Rue Docteur-Alfred-Vincent 5, 1201 Geneva, Switzerland",
-    phone: "+41 22 750 06 80*",
+    location: "Tétris Karachi",
+    address: "Rue Docteur-Alfred 5, 1298 Karchi, Pakistan",
+    phone: "+41 87 342 06 80*",
   },
   {
     name: "Belgium",
     code: "bg",
     heading: "Get in touch with our team to talk about your projects",
-    location: "Tétris Brussels",
+    location: "Tétris Marnix",
     address: "Avenue Marnix 23, 1000 Brussels, Belgium",
-    phone: "+41 22 750 06 80*",
+    phone: "+41 22 876 22 87*",
   },
   {
     name: "Dubai",
     code: "db",
     heading: "Get in touch with our team to talk about your projects",
-    location: "Tétris Geneva",
-    address: "Rue Docteur-Alfred-Vincent 5, 1201 Geneva, Switzerland",
-    phone: "+41 22 750 06 80*",
+    location: "Tétris Dubai",
+    address: "Rue Docteur-Alfred-Vincent 9, 3445 Geneva, Dubai",
+    phone: "+41 22 565 21 43*",
   },
   {
     name: "France",
     code: "france",
     heading: "Get in touch with our team to talk about your projects",
-    location: "Tétris Geneva",
-    address: "Rue Docteur-Alfred-Vincent 5, 1201 Geneva, Switzerland",
-    phone: "+41 22 750 06 80*",
+    location: "Tétris France",
+    address: "Rue Alfred-Vincent 9, 8778 Geneva, France",
+    phone: "+41 00 891 54 11*",
   },
 ];
 
@@ -60,60 +62,65 @@ const GetInTouch = () => {
       </div>
 
       <div className="">
-        <div className="relative w-full ">
-          <div className="">
-            {/* <img
-            // src={selectedCountry.flag}
-            // alt={selectedCountry.name}
-            className="w-8 h-8 mr-4"
-          /> */}
-            {/* <h2 className="text-lg font-medium text-gray-900">{selectedCountry.name}</h2> */}
+        <div className=" gap-x-12 md:flex">
+          {/* left  side  */}
+          <div className="mt-24">
+            <div className="relative w-full ">
+              <div className="absolute left-0 -top-32">
+                <select
+                  value={selectedCountry.code}
+                  onChange={(e) =>
+                    handleCountryChange(
+                      countries.find(
+                        (country) => country.code === e.target.value
+                      )
+                    )
+                  }
+                  className="block appearance-none  bg-[#020510]  text-white  text-3xl font-bold py-2 w-full pr-8 mt-12 rounded-lg"
+                >
+                  {countries.map((country) => (
+                    <option key={country.code} value={country.code}>
+                      {country.name}
+                    </option>
+                  ))}
+                </select>
+                <span className="text-lg absolute -right-1 text-white top-16">
+                  {selectedCountry.code && <RiArrowDropDownLine />}
+                </span>
+              </div>
+            </div>
+            <Image
+              className="md:w-[1500px] w-auto  md:h-[430px] h-[300px]"
+              src={Sustainability}
+              alt="Image description"
+            />
           </div>
-          <div className="absolute left-0 top-0">
-            <select
-              value={selectedCountry.code}
-              onChange={(e) =>
-                handleCountryChange(
-                  countries.find((country) => country.code === e.target.value)
-                )
-              }
-              className="block appearance-none  bg-[#020510]  text-white  text-5xl font-extrabold py-2 w-full pr-8 mt-12"
-            >
-              {countries.map((country) => (
-                <option key={country.code} value={country.code}>
-                  {country.name}
-                </option>
-              ))}
-            </select>
 
-            <span className="text-3xl absolute -right-2 text-white top-16">
-              {selectedCountry.code && <RiArrowDropDownLine />}
-            </span>
-          </div>
-        </div>
-        <div className="md:ml-[830px] md:pt-[200px] text-white mr-20">
-          <p className="font-bold text-3xl">{selectedCountry.heading}</p>
-          <p className="font-medium mt-4 text-base">
-            {selectedCountry.location}
-          </p>
-          <p className="text-base font-medium">{selectedCountry.address}</p>
-          <p className="text-base mt-5 underline underline-offset-1">
-            {selectedCountry.phone}
-          </p>
-          <div className="absolute md:right-64 mt-16 transform -translate-x-1/2 -translate-y-1/2">
-            <Stack spacing={6} direction={"row"}>
-              <Button
-                borderRadius={0}
-                px={{ base: "3", sm: "6" }}
-                bg={"transparent"}
-                textColor={"white"}
-                borderWidth={1}
-                borderColor="white"
-                _hover={{ borderColor: "red", textColor: "red" }}
-              >
-                Contact Us
-              </Button>
-            </Stack>
+          {/* rigth side  */}
+          <div className=" md:pt-[200px] pt-12 text-white mr-12">
+            <p className="font-bold text-3xl">{selectedCountry.heading}</p>
+            <p className="font-medium mt-4 text-base">
+              {selectedCountry.location}
+            </p>
+            <p className="text-base font-medium">{selectedCountry.address}</p>
+            <p className="text-base mt-5 underline underline-offset-1">
+              {selectedCountry.phone}
+            </p>
+            <div className="absolute md:right-72 right-52 mt-16 transform -translate-x-1/2 -translate-y-1/2">
+              <Stack spacing={6} direction={"row"}>
+                <Button
+                  borderRadius={0}
+                  px={{ base: "3", sm: "6" }}
+                  bg={"transparent"}
+                  textColor={"white"}
+                  borderWidth={1}
+                  borderColor="white"
+                  _hover={{ borderColor: "red", textColor: "red" }}
+                >
+                  Contact Us
+                </Button>
+              </Stack>
+            </div>
           </div>
         </div>
       </div>

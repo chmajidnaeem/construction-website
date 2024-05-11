@@ -68,11 +68,11 @@ const SustainabilityHighlights = () => {
       <div>
         <div className="md:px-16 px-5 md:pb-24 pb-8 bg-[#020510] relative">
           <Image
-            className="md:w-full md:h-[200px] w-full h-[382px] "
+            className="md:w-full md:h-[200px] w-full h-[392px] "
             src={TextureImg}
             alt="Image description"
           />
-          <div className="absolute top-[38%] md:left-96 left-72 transform -translate-x-1/2 -translate-y-1/2 text-left">
+          <div className="absolute top-[38%] md:left-96 left-44 md:mt-0 mt-3 transform -translate-x-1/2 -translate-y-1/2 text-left">
             <h2 className="text-white text-3xl font-extrabold mb-4">
               Tétris Sustainability Code
             </h2>
@@ -83,7 +83,7 @@ const SustainabilityHighlights = () => {
               solution.
             </p>
           </div>
-          <div className="mt-8 absolute right-36 top-[15%]">
+          <div className="mt-8 absolute right-36 md:top-[15%] top-[70%]">
             <Stack spacing={6} direction={"row"}>
               <Button
                 borderRadius={0}
@@ -100,28 +100,7 @@ const SustainabilityHighlights = () => {
           </div>
         </div>
         <div>
-          {/* Your other content here */}
-
-          {/* Second instance of texture image */}
-          {/* <div
-            style={{
-              position: "relative",
-              height: "300px",
-              overflow: "hidden",
-            }}
-          >
-            <Image
-              className="md:w-full md:h-[300px] w-full h-[300px]  relative  left-0 "
-              src={TextureImg}
-              alt="Image description"
-              style={{
-                filter: "blur(10px)",
-                opacity: "0.2",
-                backgroundColor: "rgba(0, 0, 0, 0.9)",
-                zIndex: 2,
-              }}
-            />
-          </div> */}
+         
         </div>
       </div>
     </div>

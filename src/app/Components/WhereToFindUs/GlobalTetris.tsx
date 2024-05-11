@@ -33,7 +33,7 @@ const GlobalTetris = () => {
   };
 
   return (
-    <div className="bg-[#020510]  md:px-20 px-5">
+    <div className="bg-[#020510]  md:px-20 px-5 pt-16 md:pt-0">
       <h2 className="md:text-5xl text-3xl text-white font-extrabold pt-12 bg-[#020510]">
         Tétris around the world
       </h2>
