@@ -3,7 +3,7 @@ import GlobalTeam from './GlobbalTeam'
 
 const page = () => {
   return (
-    <div>
+    <div className='pt-24'>
         <GlobalTeam />
     </div>
   )

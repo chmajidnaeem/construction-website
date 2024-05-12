@@ -90,12 +90,12 @@ const GlobbalTeam = () => {
           businesses.
         </p>
       </div>
-      {/* countries list  */}
+      {/* team members  */}
       <div className="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-10 md:gap-6 space-y-16 mt-14 pb-12">
         {Team.map((team) => (
-          <div key={team.heading} className="relative">
+          <div key={team.heading} className="relative overflow-hidden">
             <Image
-              className="w-full h-[400px] object-cover transition-transform duration-300 transform hover:scale-105"
+              className="w-full h-[400px] object-cover transition-transform duration-300 transform hover:scale-110"
               src={team.image}
               alt={team.heading}
               width={300}

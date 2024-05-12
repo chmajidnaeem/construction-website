@@ -3,12 +3,23 @@ import React from "react";
 import { Image } from "@chakra-ui/react";
 import { useState } from "react";
 import { IoSearchSharp, IoClose } from "react-icons/io5";
-import { Input } from '@chakra-ui/react'
-import Link from "next/link";
+
 import { AiOutlineMenu, AiOutlineClose } from "react-icons/ai";
 
 const Navbar = () => {
+  const [isHovered, setIsHovered] = useState(false);
 
+  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+
+  const handleMouseEnter = () => {
+    setIsDropdownOpen(true);
+    setIsHovered(true);
+  };
+
+  const handleMouseLeave = () => {
+    setIsDropdownOpen(false);
+    setIsHovered(false);
+  };
 
   const [isOpenOne, setIsOpenOne] = useState(false);
 
@@ -22,15 +33,11 @@ const Navbar = () => {
     setIsOpenTwo(!isOpenTwo);
   };
 
-
-
   const [nav, setNav] = useState(false);
 
   const handleNav = () => {
     setNav(!nav);
   };
-
-
 
   const [searchOpen, setSearchOpen] = useState(false);
 
@@ -41,22 +48,28 @@ const Navbar = () => {
   return (
     <div>
       <nav className="bg-white border-gray-200 py-4 dark:bg-black fixed top-0 z-50 w-full">
-        <div className="flex flex-wrap items-center justify-between max-w-screen-xl sm:px-12 px-4 mx-auto">
-          <a href="/" className="flex flex-col items-center">
+        <div className="flex flex-wrap flex-row items-center justify-between max-w-screen-xl sm:px-12 px-4 mx-auto">
+          <a href="/" className="flex items-center">
             {/* <span className="self-center sm:text-5xl text-3xl font-bold whitespace-nowrap text-white">
               tetris
             </span>
             <span className="sm:pl-6 pl-0 self-center sm:text-sm text-xs whitespace-nowrap text-white">
               design*build
             </span> */}
-            <Image src="/logo.png" alt="" w={16} height={16} className=" rounded-full"/>
+            <Image
+              src="/logo.png"
+              alt=""
+              w={16}
+              height={16}
+              className=" rounded-full"
+            />
           </a>
 
           <div
-            className="items-center justify-between w-full lg:flex lg:w-auto lg:order-1 hidden md:flex"
+            className="items-center hidden sm:hidden md:hidden justify-between w-full lg:flex lg:w-auto lg:order-1"
             id="mobile-menu-2"
           >
-            <ul className="flex flex-col mt-4 font-medium lg:flex-row lg:space-x-8 lg:mt-0">
+            <ul className="flex mt-4 font-medium flex-row lg:space-x-8 lg:mt-0">
               <li>
                 <div className="dropdown dropdown-hover">
                   <a href="/">
@@ -74,16 +87,36 @@ const Navbar = () => {
                     className="dropdown-content z-[1] menu p-2 shadow bg-gray-800 text-white w-52"
                   >
                     <li>
-                      <a href="/Components/WhoWeAre" className=" hover:text-red-700">Who we are</a>
+                      <a
+                        href="/Components/WhoWeAre"
+                        className=" hover:text-red-700"
+                      >
+                        Who we are
+                      </a>
                     </li>
                     <li>
-                    <a href="/Components/WhereToFindUs" className=" hover:text-red-700">Where to find us</a>
+                      <a
+                        href="/Components/WhereToFindUs"
+                        className=" hover:text-red-700"
+                      >
+                        Where to find us
+                      </a>
                     </li>
                     <li>
-                    <a href="/Components/MeetTheTeam" className=" hover:text-red-700">Meet the team</a>
+                      <a
+                        href="/Components/MeetTheTeam"
+                        className=" hover:text-red-700"
+                      >
+                        Meet the team
+                      </a>
                     </li>
                     <li>
-                    <a href="/Components/Sustainablity" className=" hover:text-red-700">Sustainability</a>
+                      <a
+                        href="/Components/Sustainablity"
+                        className=" hover:text-red-700"
+                      >
+                        Sustainability
+                      </a>
                     </li>
                   </ul>
                 </div>
@@ -91,11 +124,10 @@ const Navbar = () => {
               <li>
                 <div className="dropdown dropdown-hover">
                   <a href="/Services">
-                    {" "}
                     <div
                       tabIndex={0}
                       role="button"
-                      className="block py-2 pl-3 pr-4 text-white hover:text-red-700"
+                      className="block py-2 pl-3 pr-4 text-white hover:text-red-700 relative"
                     >
                       Services
                     </div>
@@ -105,29 +137,112 @@ const Navbar = () => {
                     className="dropdown-content z-[1] menu p-2 shadow bg-gray-800 text-white w-52"
                   >
                     <li>
-                      <a href="/Services" className=" hover:text-red-700">Design and Build</a>
+                      <a href="/Services" className="hover:text-red-700">
+                        Design and Build
+                      </a>
                     </li>
                     <li>
-                    <a className=" hover:text-red-700">Workplace consultancy</a>
+                      <a
+                        href="/Services/WorkplaceConsultancy"
+                        className="hover:text-red-700"
+                      >
+                        Workplace consultancy
+                      </a>
                     </li>
                     <li>
-                    <a className=" hover:text-red-700">Interior design</a>
+                      <a
+                        href="/Services/InteriorDesign.tsx"
+                        className="hover:text-red-700"
+                      >
+                        Interior design
+                      </a>
                     </li>
                     <li>
-                    <a className=" hover:text-red-700">Fit-out services</a>
+                      <a
+                        href="/Services/FitoutServices"
+                        className="hover:text-red-700"
+                      >
+                        Fit-out services
+                      </a>
                     </li>
                     <li>
-                    <a className=" hover:text-red-700">Furniture solutions</a>
+                      <a
+                        href="/Services/FurnitureSolutions"
+                        className="hover:text-red-700"
+                      >
+                        Furniture solutions
+                      </a>
                     </li>
-                    <li>
-                    <a className=" hover:text-red-700">Sectors</a>
+                    <li
+                      onMouseEnter={handleMouseEnter}
+                      onMouseLeave={handleMouseLeave}
+                    >
+                      <div className="dropdown dropdown-hover">
+                        <a href="#" className="hover:text-red-700">
+                          <div
+                            className="relative flex items-center"
+                            tabIndex={0}
+                            role="button"
+                          >
+                            Sectors
+                            <span
+                              className="ml-2"
+                              style={{
+                                transform: isHovered
+                                  ? "translateX(2px)"
+                                  : "none",
+                                transition: "transform 0.2s ease",
+                              }}
+                            >
+                              <div className=" ml-24">
+                                <svg
+                                  xmlns="http://www.w3.org/2000/svg"
+                                  width="24"
+                                  height="24"
+                                  fill="red"
+                                >
+                                  <path d="M7.293 4.707 14.586 12l-7.293 7.293 1.414 1.414L17.414 12 8.707 3.293 7.293 4.707z" />
+                                </svg>
+                              </div>
+                            </span>
+                          </div>
+                        </a>
+                        {isDropdownOpen && (
+                          <ul className="dropdown-content-right absolute top-0 left-48 z-[1] menu shadow bg-gray-800 text-white w-52">
+                            <li>
+                              <a
+                                href="/Services/Sectors/Office"
+                                className="hover:text-red-700"
+                              >
+                                Office
+                              </a>
+                            </li>
+                            <li>
+                              <a
+                                href="/Services/Sectors/Hotel"
+                                className="hover:text-red-700"
+                              >
+                                Hotel
+                              </a>
+                            </li>
+                            <li>
+                              <a
+                                href="/Services/Sectors/Retail"
+                                className="hover:text-red-700"
+                              >
+                                Retail
+                              </a>
+                            </li>
+                          </ul>
+                        )}
+                      </div>
                     </li>
                   </ul>
                 </div>
               </li>
               <li>
                 <a
-                  href="#"
+                  href="/Components/OurProjects"
                   className="block py-2 pl-3 pr-4 text-white hover:text-red-700"
                 >
                   Our Projects
@@ -135,7 +250,7 @@ const Navbar = () => {
               </li>
               <li>
                 <a
-                  href="#"
+                  href="/Insights"
                   className="block py-2 pl-3 pr-4 text-white hover:text-red-700"
                 >
                   Insights & News
@@ -225,220 +340,192 @@ const Navbar = () => {
           </div>
         </div>
 
-
-
-
-
-
-
- {/* Mobile Nav */}
- <div
-        className={`fixed left-0 w-full min-h-screen bg-black/70 z-[101] ${
-          nav ? "" : "hidden"
-        }`}
-      >
+        {/* Mobile Nav */}
         <div
-          className={`fixed top-16 left-0 w-[100%] sm:w-[100%] md:w-[100%] h-full bg-black pl-2 pr-2 ease-in duration-500 ${
-            nav ? "" : "left-[-100%]"
+          className={`fixed left-0 w-full min-h-screen bg-black/70 z-[101] ${
+            nav ? "" : "hidden"
           }`}
         >
-          
-          <div className="">
-          <ul className="flex flex-col mt-4 font-medium ">
-
-          <li>
-                
-                    <div className="relative navbar-transition">
-                      <input
-                        type="text"
-                        className="border text-center border-gray-300 py-1 bg-black focus:outline-none focus:border-indigo-500"
-                        placeholder="Search..."
-                      />
-                      <div
-                        className="absolute top-0 flex items-center h-full px-3"
-                        onClick={toggleSearch}
-                      >
-                        <IoSearchSharp className="text-gray-500" />
-                      </div>
-                     
-                    </div>
-                  
-              </li>
-
-
-
-
-              <li>
-      <div className="dropdown relative">
-        <div
-          tabIndex={0}
-          role="button"
-          className="block py-2 pl-3 pr-4 w-full flex justify-between items-center text-white hover:text-red-700 border-b border-gray-100 dark:border-gray-700"
-          onClick={toggleDropdownOne}
-        >
-          About us
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            className={`w-5 h-5 transition-transform ml-44 transform ${isOpenOne ? 'rotate-180' : ''}`}
-            viewBox="0 0 20 20"
-            fill="currentColor"
+          <div
+            className={`fixed top-16 left-0 w-[100%] sm:w-[100%] md:w-[100%] h-full bg-black pl-2 pr-2 ease-in duration-500 ${
+              nav ? "" : "left-[-100%]"
+            }`}
           >
-            <path
-              fillRule="evenodd"
-              d={isOpenOne ? "M10 3l7 7H3l7-7z" : "M10 17l-7-7h14l-7 7z"}
-              clipRule="evenodd"
-            />
-          </svg>
-        </div>
-        {isOpenOne && (
-          <ul
-          tabIndex={0}
-          className="dropdown-content z-[1] menu p-2 shadow bg-gray-800 text-white w-52"
-        >
-          <li>
-            <a className=" hover:text-red-700">Who we are</a>
-          </li>
-          <li>
-          <a className=" hover:text-red-700">Where to find us</a>
-          </li>
-          <li>
-          <a className=" hover:text-red-700">Meet the team</a>
-          </li>
-          <li>
-          <a className=" hover:text-red-700">Sustainability</a>
-          </li>
-        </ul>
-        )}
-      </div>
-    </li>
+            <div className="">
+              <ul className="flex flex-col mt-4 font-medium ">
+                <li>
+                  <div className="relative navbar-transition">
+                    <input
+                      type="text"
+                      className="border text-center border-gray-300 py-1 bg-black focus:outline-none focus:border-indigo-500"
+                      placeholder="Search..."
+                    />
+                    <div
+                      className="absolute top-0 flex items-center h-full px-3"
+                      onClick={toggleSearch}
+                    >
+                      <IoSearchSharp className="text-gray-500" />
+                    </div>
+                  </div>
+                </li>
 
-
-
-
-
-              {/* <li>
-                <div className="dropdown dropdown-hover">
-                  <a href="#">
-                    {" "}
+                <li>
+                  <div className="dropdown relative">
                     <div
                       tabIndex={0}
                       role="button"
-                      className="block py-2 pl-3 pr-4 w-full text-white hover:text-red-700 border-b border-gray-100 dark:border-gray-700"
+                      className=" py-2 pl-3 pr-4 w-full flex justify-between items-center text-white hover:text-red-700 border-b border-gray-100 dark:border-gray-700"
+                      onClick={toggleDropdownOne}
                     >
                       About us
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        className={`w-5 h-5 transition-transform ml-44  transform ${
+                          isOpenOne ? "rotate-180" : ""
+                        }`}
+                        viewBox="0 0 20 20"
+                        fill="currentColor"
+                      >
+                        <path
+                          fillRule="evenodd"
+                          d={
+                            isOpenOne
+                              ? "M10 3l7 7H3l7-7z"
+                              : "M10 17l-7-7h14l-7 7z"
+                          }
+                          clipRule="evenodd"
+                        />
+                      </svg>
                     </div>
-                  </a>
-                  <ul
-                    tabIndex={0}
-                    className="dropdown-content z-[1] menu p-2 shadow bg-base-100 w-52"
+                    {isOpenOne && (
+                      <ul
+                        tabIndex={0}
+                        className="dropdown-content z-[1] menu p-2 shadow bg-gray-800 text-white w-52"
+                      >
+                        <li>
+                          <a className=" hover:text-red-700">Who we are</a>
+                        </li>
+                        <li>
+                          <a className=" hover:text-red-700">
+                            Where to find us
+                          </a>
+                        </li>
+                        <li>
+                          <a className=" hover:text-red-700">Meet the team</a>
+                        </li>
+                        <li>
+                          <a className=" hover:text-red-700">Sustainability</a>
+                        </li>
+                      </ul>
+                    )}
+                  </div>
+                </li>
+
+                <li>
+                  <div className="dropdown relative">
+                    <div
+                      tabIndex={0}
+                      role="button"
+                      className=" py-2 pl-3 pr-4 w-full flex justify-between items-center text-white hover:text-red-700 border-b border-gray-100 dark:border-gray-700"
+                      onClick={toggleDropdownTwo}
+                    >
+                      Services
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        className={`w-5 h-5 transition-transform ml-44 transform ${
+                          isOpenTwo ? "rotate-180" : ""
+                        }`}
+                        viewBox="0 0 20 20"
+                        fill="currentColor"
+                      >
+                        <path
+                          fillRule="evenodd"
+                          d={
+                            isOpenTwo
+                              ? "M10 3l7 7H3l7-7z"
+                              : "M10 17l-7-7h14l-7 7z"
+                          }
+                          clipRule="evenodd"
+                        />
+                      </svg>
+                    </div>
+                    {isOpenTwo && (
+                      <ul
+                        tabIndex={0}
+                        className="dropdown-content z-[1] menu p-2 shadow bg-gray-800 text-white w-52"
+                      >
+                        <li>
+                          <a className=" hover:text-red-700">
+                            Design and Build
+                          </a>
+                        </li>
+                        <li>
+                          <a className=" hover:text-red-700">
+                            Workplace consultancy
+                          </a>
+                        </li>
+                        <li>
+                          <a className=" hover:text-red-700">Interior design</a>
+                        </li>
+                        <li>
+                          <a className=" hover:text-red-700">
+                            Fit-out services
+                          </a>
+                        </li>
+                        <li>
+                          <a className=" hover:text-red-700">
+                            Furniture solutions
+                          </a>
+                        </li>
+                        <li>
+                          <a className=" hover:text-red-700">Sectors</a>
+                        </li>
+                      </ul>
+                    )}
+                  </div>
+                </li>
+                <li>
+                  <a
+                    href="#"
+                    className="block py-2 pl-3 pr-4 w-full text-white hover:text-red-700 border-b border-gray-100 dark:border-gray-700"
                   >
-                    <li>
-                      <a>Item 1</a>
-                    </li>
-                    <li>
-                      <a>Item 2</a>
-                    </li>
-                  </ul>
-                </div>
-              </li> */}
-                     <li>
-      <div className="dropdown relative">
-        <div
-          tabIndex={0}
-          role="button"
-          className="block py-2 pl-3 pr-4 w-full flex justify-between items-center text-white hover:text-red-700 border-b border-gray-100 dark:border-gray-700"
-          onClick={toggleDropdownTwo}
-        >
-          Services
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            className={`w-5 h-5 transition-transform ml-44 transform ${isOpenTwo ? 'rotate-180' : ''}`}
-            viewBox="0 0 20 20"
-            fill="currentColor"
-          >
-            <path
-              fillRule="evenodd"
-              d={isOpenTwo ? "M10 3l7 7H3l7-7z" : "M10 17l-7-7h14l-7 7z"}
-              clipRule="evenodd"
-            />
-          </svg>
-        </div>
-        {isOpenTwo && (
-          <ul
-          tabIndex={0}
-          className="dropdown-content z-[1] menu p-2 shadow bg-gray-800 text-white w-52"
-        >
-          <li>
-            <a className=" hover:text-red-700">Design and Build</a>
-          </li>
-          <li>
-          <a className=" hover:text-red-700">Workplace consultancy</a>
-          </li>
-          <li>
-          <a className=" hover:text-red-700">Interior design</a>
-          </li>
-          <li>
-          <a className=" hover:text-red-700">Fit-out services</a>
-          </li>
-          <li>
-          <a className=" hover:text-red-700">Furniture solutions</a>
-          </li>
-          <li>
-          <a className=" hover:text-red-700">Sectors</a>
-          </li>
-        </ul>
-        )}
-      </div>
-    </li>
-              <li>
-                <a
-                  href="#"
-                  className="block py-2 pl-3 pr-4 w-full text-white hover:text-red-700 border-b border-gray-100 dark:border-gray-700"
-                >
-                  Our Projects
-                </a>
-              </li>
-              <li>
-                <a
-                  href="#"
-                  className="block py-2 pl-3 pr-4 w-full text-white hover:text-red-700 border-b border-gray-100 dark:border-gray-700"
-                >
-                  Insights & News
-                </a>
-              </li>
-              <li>
-                <a
-                  href="#"
-                  className="block py-2 pl-3 pr-4 w-full text-white hover:text-red-700 border-b border-gray-100 dark:border-gray-700"
-                >
-                  Contact us
-                </a>
-              </li>
-
-            
-
-            </ul>
+                    Our Projects
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="#"
+                    className="block py-2 pl-3 pr-4 w-full text-white hover:text-red-700 border-b border-gray-100 dark:border-gray-700"
+                  >
+                    Insights & News
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="#"
+                    className="block py-2 pl-3 pr-4 w-full text-white hover:text-red-700 border-b border-gray-100 dark:border-gray-700"
+                  >
+                    Contact us
+                  </a>
+                </li>
+              </ul>
+            </div>
           </div>
         </div>
-      </div>
 
-      {/* Hamburger Menu Icon */}
-      <div className="md:hidden fixed top-4 right-4 z-[102]">
-        <div
-          onClick={handleNav}
-          className="p-2 rounded-full bg-black cursor-pointer"
-        >
-          {nav ? <AiOutlineClose color="red" size="24" /> : <AiOutlineMenu color="red" size="24" />}
+        {/* Hamburger Menu Icon */}
+        <div className=" fixed top-4 right-12 z-[102]">
+          <div
+            onClick={handleNav}
+            className="p-2 md:mr-12 rounded-full lg:hidden bg-black cursor-pointer"
+          >
+            {nav ? (
+              <AiOutlineClose color="red" size="24" />
+            ) : (
+              <AiOutlineMenu color="red" size="24" />
+            )}
+          </div>
         </div>
-      </div>
-
-
-
-
-
-
-
-
       </nav>
     </div>
   );

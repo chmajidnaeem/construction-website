@@ -5,19 +5,19 @@ import { useState } from "react";
 
 const communities = [
   {
-    name: "Climate Action",
+    // name: "Climate Action",
     image: "/sustainability-1-climate-action.jpg",
     paragraph:
       "We support action that accelerates the transition to net-zero, enhances performance and mitigates risks.",
   },
   {
-    name: "Healthy Spaces",
+    // name: "Healthy Spaces",
     image: "/sustainability-2-healthy-spaces.jpg",
     paragraph:
       "We create safe and healthy spaces that promote productivity, wellbeing and sustainability.",
   },
   {
-    name: "Inclusive Places",
+    // name: "Inclusive Places",
     image: "/sustainability-2-healthy-spaces.jpg",
     paragraph:
       "We provide fair and inclusive places that support equal opportunities and thriving communities.",
@@ -41,9 +41,9 @@ const SustainabilityApproach = () => {
 
       <div className="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-10 mt-14 pb-12">
         {communities.map((community) => (
-          <div key={community.name} className="relative">
+          <div key={community.name} className="relative overflow-hidden">
             <Image
-              className="w-full h-[250px] object-cover transition-transform duration-300 transform hover:scale-105"
+              className="w-full h-[250px] object-cover transition-transform duration-300 transform hover:scale-110"
               src={community.image}
               alt={community.name}
               width={500}

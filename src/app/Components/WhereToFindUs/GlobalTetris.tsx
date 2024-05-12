@@ -61,9 +61,9 @@ const GlobalTetris = () => {
       {/* countries list  */}
       <div className="grid md:grid-cols-2 grid-cols-1 gap-10 mt-14 pb-12">
         {countries.map((country) => (
-          <div key={country.name} className="relative">
+          <div key={country.name} className="relative overflow-hidden">
             <Image
-              className="w-full h-full object-cover transition-transform duration-300 transform hover:scale-105"
+              className="w-full h-full object-cover transition-transform duration-300 transform hover:scale-110"
               src={country.image}
               alt={country.name}
               width={500}

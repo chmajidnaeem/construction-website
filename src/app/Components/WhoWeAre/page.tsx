@@ -7,11 +7,11 @@ import Sustainability from './Sustainability'
 import GetInTouchAboutUs from './GetInTouchAboutUs'
 const page = () => {
   return (
-    <div className="bg-black">
+    <div className='pt-24'>
       <WhoWeAre />
       <WhatSetUsApart />
       <OurHistory />
-      {/* <Values /> */}
+      <Values />
       <Sustainability />
       <GetInTouchAboutUs  />
     </div>
